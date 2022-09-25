@@ -29,7 +29,6 @@ std::vector<MatrixXd> some_linearalgebra(){
 	//return 0;
 }
 
-
 std::vector<std::vector<MatrixXd>> pll_somelinalgeb(){
 
 int num_runs = 5000;
