@@ -13,7 +13,7 @@ precompiled header must be created if an OpenMP enabled C++ compiler needs
 to be used. The steps include:
 
 1. Putting the ```EXTRA_CLING_ARGS``` as an 
-environmental variable (in this case ```EXTRA_CLING_ARGS=-fopenmp=libiomp5```
+environmental variable (in this case ```EXTRA_CLING_ARGS=-fopenmp```
 1. Running the code (also on the readthedocs page) to generate
 the OpenMP enabled precompiled-header (using ```cppyy_backend.loader```
 1. Export the second environmental variable ```CLING_STANDARD_PCH``` set to 
@@ -33,11 +33,15 @@ Explicitly telling Cling where the ```libiomp5.so``` through a pragma
 in the C++ code turns on parallellisation - and things work suddenly!
 
 ```
+// Add this in the C++ code
 #include <omp.h>
-#pragma cling load("<path to your libiomp5 library>/libiomp5.so")
 ```
-Including the ```pragma``` made the code work, and I started seeing expected
-reduction in run-times. 
+
+```
+import cppyy
+# load_libary tells which .dll or .so file to use for the -fopenmp flag
+cppyy.load_library(<insert path to .so file in Unis and .dll file in Windows>) 
+```
 
 Thus now, run the python code in the command-line with 
 ```
