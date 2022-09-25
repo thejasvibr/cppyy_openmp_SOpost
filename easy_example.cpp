@@ -1,5 +1,5 @@
 #include <omp.h>
-#pragma cling load("/home/autumn/anaconda3/lib/libiomp5.so")
+//#pragma cling load("/home/autumn/anaconda3/lib/libiomp5.so")
 #include <iostream>
 #include <Eigen/Dense>
 #include <chrono>
@@ -31,7 +31,7 @@ std::vector<MatrixXd> some_linearalgebra(){
 
 std::vector<std::vector<MatrixXd>> pll_somelinalgeb(){
 
-int num_runs = 5000;
+int num_runs = 500;
 std::vector<std::vector<MatrixXd>> all_solns(num_runs);
 
 #pragma omp parallel for

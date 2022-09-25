@@ -1,4 +1,5 @@
 import cppyy
+cppyy.load_library("/home/autumn/anaconda3/lib/libiomp5.so")
 cppyy.add_include_path('../np_vs_eigen/eigen/')
 cppyy.include('easy_example.cpp')
 import datetime as dt
