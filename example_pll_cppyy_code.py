@@ -9,3 +9,5 @@ output = cppyy.gbl.pll_somelinalgeb()
 stop = dt.datetime.now()
 print((stop-start), 'seconds')
 
+for each in output[:10]:
+    print(each[0])

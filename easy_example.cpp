@@ -1,4 +1,5 @@
 #include <omp.h>
+#pragma cling load("/home/autumn/anaconda3/lib/libiomp5.so")
 #include <iostream>
 #include <Eigen/Dense>
 #include <chrono>
