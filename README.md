@@ -50,7 +50,10 @@ $python example_pll_cppyy_code.py
 
 ### Where all this works
 
-> Tested on Linux Mint 19.2 Cinnamon (Intel Core i5-42100 CPU)
+Tested on:
+* Linux Mint 19.2 Cinnamon
+* Windows 11 laptop 
+* Ubuntu 18.04
 
 
 
